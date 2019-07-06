@@ -1,0 +1,15 @@
+body{
+    background-image: url("../images/light_grey_floral_motif.png");
+}
+
+header{
+    font-size: 3rem;
+    font-family: 'Righteous', cursive;
+    margin: auto;
+}
+
+#subtitle{
+    font-style: italic;
+    margin: auto;
+    text-align: center;    
+}
