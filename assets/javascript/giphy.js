@@ -13,6 +13,8 @@ function createBtns(){
 }
 
 $(document).on("click", ".athlete-btn", function(){
+    $("#gifs").empty();
+    
     console.log("value= " + $(this).text());
     let athlete = $(this).text();
     let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + athlete + "&api_key=dc6zaTOxFJmzC&limit=1";
