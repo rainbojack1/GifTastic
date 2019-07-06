@@ -8,8 +8,17 @@ header{
     margin: auto;
 }
 
+.athlete-btn{
+    margin: 10px;
+}
+
 #subtitle{
     font-style: italic;
     margin: auto;
     text-align: center;    
 }
+
+#topics{
+    margin: 10px;
+}
+
