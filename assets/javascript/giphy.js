@@ -5,11 +5,11 @@ let topicArr = ["Michael Jordan", "Larry Bird", "Lebron James", "Kobe Bryant", "
 
 
 function createBtns() {
+    $("#topic-btns").empty();
     for (let i = 0; i < topicArr.length; i++) {
         $("#topic-btns").append('<button type="button" class="btn btn-primary athlete-btn">' + topicArr[i] + '</button>');
     }
-    //populateGifs();
-    //get the value of a textbox using $("#id").val().trim();
+    
 }
 
 $(document).on("click", ".athlete-btn", function () {
@@ -18,10 +18,13 @@ $(document).on("click", ".athlete-btn", function () {
     let athlete = $(this).text();
     let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + athlete + "&api_key=dc6zaTOxFJmzC&limit=1";
 
+    console.log("athlete-btn athelete: ", athlete);
+
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
+        console.log("queryURL: ", queryURL);
         console.log(response);
         let results = response.data;
         let stillGif = results[0].images.fixed_height_still.url;
@@ -59,6 +62,9 @@ $("#find-search-term").click(function(event){
 function searchNewAthlete(){
     let newAthlete = $("#search-input").val().trim();
     console.log("newAthlete: ", newAthlete);
+    topicArr.push(newAthlete);
+    createBtns();
 }
+
 
 createBtns();
