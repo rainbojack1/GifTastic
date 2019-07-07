@@ -51,6 +51,14 @@ $(document).on("click", ".athlete-btn", function () {
     });
 });
 
+$("#find-search-term").click(function(event){
+    event.preventDefault();
+    searchNewAthlete();
+});
 
+function searchNewAthlete(){
+    let newAthlete = $("#search-input").val().trim();
+    console.log("newAthlete: ", newAthlete);
+}
 
 createBtns();

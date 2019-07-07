@@ -2,43 +2,58 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>GifTastic</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="assets/css/resetCss.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="assets/css/styles.css">
-        <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GifTastic</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/resetCss.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="container">
-            <div class="row">
-                <header>GifTastic</header>
-                <h3 id="subtitle">Double-click on a button to see their gifs. You can add a new button using the text box on the right.</h3>
-            </div>
-            <div class="row" id="topics">
-                <div class="col-md-9">
-                    <div id="topic-btns"></div>
-                </div>
-                <div class="col-md-3" id="search">
-                    Placeholder for the search bar
-                </div>
-            </div>
-            <div class="row" id="gifs">
-                Placeholder for gifs
-            </div>
-
+    <div class="container">
+        <div class="row">
+            <header>GifTastic</header>
+            <h3 id="subtitle">Double-click on a button to see their gifs. You can add a new button using the text box on
+                the right.</h3>
         </div>
-        
-        <script src="assets/javascript/giphy.js" async defer></script>
-    </body>
+        <div class="row" id="topics">
+            <div class="col-md-9">
+                <div id="topic-btns"></div>
+            </div>
+            <div class="col-md-3" id="search">
+
+                <form id="search-form" class="form-inline">
+                    <label for="search-input">
+                        <h5>Search new athlete</h5>
+                    </label>
+                    <input type="text" id="search-input">
+                    <input id="find-search-term" type="submit" value="Search">
+                </form>
+
+            </div>
+        </div>
+        <div class="row" id="gifs">
+            Placeholder for gifs
+        </div>
+
+    </div>
+
+    <script src="assets/javascript/giphy.js" async defer></script>
+</body>
+
 </html>
