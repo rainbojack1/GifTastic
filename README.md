@@ -1,5 +1,15 @@
 # GifTastic
 
+This project pulls up related gifs for each person listed on the buttons.
+This project is useful in learning how to use API calls.
+To make your own version of this project you first need to obtain an API key from [Giphy API](https://developers.giphy.com/).
+
+### Rundown of project
+A set of buttons is created for each element in the hardcoded athlete array.
+When a user clicks on a button an ajax call to Giphy is made and the page displays 10 still gifs relating to the athlete on the button.
+when a user clicks on one of the still gifs it then becomes animated. The animated gif goes back still if clicked again.
+The user also has the option of adding a new button by using the search field to the right.
+
 ### Instructions
 
 1. Before you can make any part of your site work, you need to create an array of strings, each one related to a topic that interests you. Save it to a variable called `topics`.
@@ -20,17 +30,4 @@
 
 7. Deploy your assignment to Github Pages.
 
-### Bonus Goals
-
-1. Ensure your app is fully mobile responsive.
-
-2. Allow users to request additional gifs to be added to the page.
-   * Each request should ADD 10 gifs to the page, NOT overwrite the existing gifs.
-
-3. List additional metadata (title, tags, etc) for each gif in a clean and readable format.
-
-4. Integrate this search with additional APIs such as OMDB, or Bands in Town. Be creative and build something you are proud to showcase in your portfolio
-
-5. Allow users to add their favorite gifs to a `favorites` section.
-   * This should persist even when they select or add a new topic.
-   * If you are looking for a major challenge, look into making this section persist even when the page is reloaded(via localStorage or cookies).
+8. **Rejoice**! You just made something really cool.
