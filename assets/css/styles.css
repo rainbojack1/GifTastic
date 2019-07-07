@@ -30,3 +30,9 @@ form h5{
     margin: 10px;
 }
 
+p{
+    font-weight: 500;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 5px;
+}

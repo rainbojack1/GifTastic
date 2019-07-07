@@ -31,13 +31,17 @@ $(document).on("click", ".athlete-btn", function () {
         for(var j = 0; j < 10; j++){
             stillGif = results[j].images.fixed_height_still.url;
             animatedGif = results[j].images.fixed_height.url;
+            let gifDiv = $("<div>");
             let gif = $("<img>");
             gif.attr("src", stillGif);
             gif.attr("data-still", stillGif);
             gif.attr("data-animate", animatedGif);
             gif.attr("data-state", "still");
-            
-            $("#gifs").append(gif);
+
+            let rating = $("<p>").text("Rating: " + results[j].rating);
+                                    
+            gifDiv.append(gif).append(rating);
+            $("#gifs").append(gifDiv);
         }
         //add a click listener to img
         $(document).on("click", "img", function () {
