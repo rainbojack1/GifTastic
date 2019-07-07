@@ -8,6 +8,9 @@ header{
     margin: auto;
 }
 
+img{
+    margin: 2px;
+}
 .athlete-btn{
     margin: 10px;
 }

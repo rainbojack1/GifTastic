@@ -36,10 +36,9 @@ $(document).on("click", ".athlete-btn", function () {
             gif.attr("data-still", stillGif);
             gif.attr("data-animate", animatedGif);
             gif.attr("data-state", "still");
-            //gif.attr("data-count", j);
-
-        $("#gifs").append(gif);
-    }
+            
+            $("#gifs").append(gif);
+        }
         //add a click listener to img
         $(document).on("click", "img", function () {
             let state = $(this).attr("data-state");
@@ -52,7 +51,7 @@ $(document).on("click", ".athlete-btn", function () {
                 $(this).attr("src", $(this).attr("data-still"));
                 $(this).attr("data-state", "still");
             }
-           
+            
         });
         
     });
@@ -66,7 +65,12 @@ $("#find-search-term").click(function(event){
 function searchNewAthlete(){
     let newAthlete = $("#search-input").val().trim();
     console.log("newAthlete: ", newAthlete);
-    topicArr.push(newAthlete);
+    if(topicArr.indexOf(newAthlete) === - 1){
+        topicArr.push(newAthlete);
+    }
+
+    $("#search-input").val("");
+    
     createBtns();
 }
 
