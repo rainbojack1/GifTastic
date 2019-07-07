@@ -4,38 +4,53 @@ let topicArr = ["Michael Jordan", "Larry Bird", "Lebron James", "Kobe Bryant", "
 
 
 
-function createBtns(){
-    for(let i = 0; i < topicArr.length; i++){
+function createBtns() {
+    for (let i = 0; i < topicArr.length; i++) {
         $("#topic-btns").append('<button type="button" class="btn btn-primary athlete-btn">' + topicArr[i] + '</button>');
     }
     //populateGifs();
     //get the value of a textbox using $("#id").val().trim();
 }
 
-$(document).on("click", ".athlete-btn", function(){
+$(document).on("click", ".athlete-btn", function () {
     $("#gifs").empty();
-    
-    console.log("value= " + $(this).text());
+    //$("img").empty();
     let athlete = $(this).text();
     let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + athlete + "&api_key=dc6zaTOxFJmzC&limit=1";
 
     $.ajax({
         url: queryURL,
         method: "GET"
-    }).then(function(response){
+    }).then(function (response) {
         console.log(response);
-        var results = response.data;
+        let results = response.data;
+        let stillGif = results[0].images.fixed_height_still.url;
+        let animatedGif = results[0].images.fixed_height.url;
         let gif = $("<img>");
-        gif.attr("src", results[0].images.fixed_height.url);
+        gif.attr("src", stillGif);
+        gif.attr("data-state", "still");
+        gif.attr("data-name", athlete);
+
         $("#gifs").append(gif);
+
+        //add a click listener to img
+        $(document).on("click", "img", function () {
+            let state = $(this).attr("data-state");
+           
+            if (state === "still") {
+                $(this).attr("src", animatedGif);
+                $(this).attr("data-state", "animate");
+            }
+            else if (state === "animate") {
+                $(this).attr("src", stillGif);
+                $(this).attr("data-state", "still");
+            }
+           
+        });
+        
     });
 });
 
-/*function populateGifs(){
-    $(".athlete-btn").on("click", function(){
-        console.log(this.getAttribute('data-name'));
-        
-    })
-}*/
+
 
 createBtns();
