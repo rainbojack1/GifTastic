@@ -11,6 +11,11 @@ header{
 img{
     margin: 2px;
 }
+
+form h5{
+    margin-right: 5px;
+}
+
 .athlete-btn{
     margin: 10px;
 }
