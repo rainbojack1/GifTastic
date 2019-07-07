@@ -1,4 +1,4 @@
-# Giphy_Lube
+# GifTastic
 
 ### Instructions
 
