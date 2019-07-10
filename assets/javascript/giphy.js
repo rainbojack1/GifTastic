@@ -37,6 +37,7 @@ $(document).on("click", ".athlete-btn", function () {
             gif.attr("data-still", stillGif);
             gif.attr("data-animate", animatedGif);
             gif.attr("data-state", "still");
+            gif.attr("data-name", athlete);
 
             let rating = $("<p>").text("Rating: " + results[j].rating);
                                     
@@ -44,16 +45,19 @@ $(document).on("click", ".athlete-btn", function () {
             $("#gifs").append(gifDiv);
         }
         //add a click listener to img
-        $(document).on("click", "img", function () {
+        $(document).on("click", "img", function (event) {
+            event.stopImmediatePropagation();
             let state = $(this).attr("data-state");
-           
+            console.log("This: ", this);
             if (state === "still") {
                 $(this).attr("src", $(this).attr("data-animate"));
                 $(this).attr("data-state", "animate");
+                console.log("data-name", $(this).attr("data-name"));
             }
             else if (state === "animate") {
                 $(this).attr("src", $(this).attr("data-still"));
                 $(this).attr("data-state", "still");
+                console.log("data-name", $(this).attr("data-name"));
             }
             
         });
